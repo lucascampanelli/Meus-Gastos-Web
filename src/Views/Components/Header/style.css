@@ -1,0 +1,28 @@
+header{
+    display: flex;
+    flex-direction: row;
+    padding: 5px 33px 5px 33px;
+    background-color: #232323;
+    color: #ffffff;
+}
+
+header nav{
+    width: 80%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+header nav ul{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 40%;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+header nav ul li{
+    cursor: pointer;
+}

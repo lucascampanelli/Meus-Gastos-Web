@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate } from "react-router-dom";
+import './style.css';
 
 export default function Header(){
 
@@ -7,13 +8,13 @@ export default function Header(){
 
     return(
         <header>
-            <h1>Meus Gastos</h1>
+            <h1>MEUS GASTOS</h1>
 
             <nav>
                 <ul>
-                    <li onClick={() => navigate("/")}>Início</li>
-                    <li onClick={() => navigate("/despesas")}>Despesas</li>
-                    <li onClick={() => navigate("/cartoes")}>Cartões</li>
+                    <li onClick={() => navigate("/")}>INÍCIO</li>
+                    <li onClick={() => navigate("/despesas")}>DESPESAS</li>
+                    <li onClick={() => navigate("/cartoes")}>CARTÕES</li>
                 </ul>
             </nav>
         </header>
