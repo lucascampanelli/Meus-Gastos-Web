@@ -1,4 +1,4 @@
-import React, { useEffect, useState }  from 'react';
+import React, { useState }  from 'react';
 import api from './../../../Services/Api'
 
 export default function CreateCards(props){
@@ -50,7 +50,7 @@ export default function CreateCards(props){
 
                 <div className='formControl'>
                     <button type="reset" className="cancelBtn" onClick={() => {props.setPage("listar")}}>CANCELAR</button>
-                    <button className="addBtn" onClick={() => {props.setPage("criar")}}>ADICIONAR CARTÃO</button>
+                    <button className="addBtn">ADICIONAR CARTÃO</button>
                 </div>
             </form>
         </section>

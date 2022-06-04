@@ -9,7 +9,11 @@
 }
 
 .cardsList li{
-    background-color: #333333;
+    /* background-color: #333333; */
+    /* background: linear-gradient(30deg, #ff0000 -10%, #0000ff 120%); */
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     width: 100%;
     max-width: 320px;
     height: 150px;
@@ -26,6 +30,19 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+}
+
+.cardControl .editIcon {
+    height: 14px;
+    width: 17px;
+    cursor: pointer;
+}
+
+.cardControl .exitIcon {
+    height: 18px;
+    width: 18px;
+    cursor: pointer;
+    color: #f55943;
 }
 
 .cardsList li .cardControl div{
@@ -46,7 +63,7 @@
 
 .expirationLabel{
     margin-top: 9px !important;
-    color: #f55943 !important;
+    color: #def543 !important;
 }
 
 .cardsList li span {
@@ -95,4 +112,54 @@ form .formControl {
     justify-content: space-around;
     height: 120px;
     width: 100%;
+}
+
+.removeAlertBackDrop {
+    position: absolute;
+    background-color: #000000dd;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.removeAlert{
+    display: flex;
+    flex-direction: column;
+    background-color: #333333;
+    width: 33%;
+    z-index: 3;
+    padding: 5px;
+}
+
+.removeAlert h4{
+    margin: 22px 0 12px 33px;
+    font-size: 18px;
+}
+
+.removeAlert p{
+    align-self: center;
+    width: 86%;
+    margin: 12px 0 33px 0;
+}
+
+.removeAlert span{
+    color: #4384f5;
+    font-weight: bold;
+}
+
+.alertControl{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    margin: 0 0 20px 0;
+}
+
+.alertControl div{
+    width: 38%;
 }

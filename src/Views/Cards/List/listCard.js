@@ -1,5 +1,6 @@
 import React, { useEffect, useState }  from 'react';
 import api from './../../../Services/Api'
+import { MdEdit, MdOutlineClear, MdOutlineAdd } from 'react-icons/md';
 
 export default function ListCards(props){
 
@@ -17,13 +18,21 @@ export default function ListCards(props){
         getCards();
     }, []);
 
+    useEffect(() => {
+        if(props.jobSuccess)
+            getCards();
+
+        console.log(props.jobSuccess);
+        props.setJobSuccess(false);
+    }, [props.jobSuccess]);
+
     return(
         <section>
             <div className='screenControl'>
                 <h2>Meus cartões</h2>
 
                 <div>
-                    <button className="addBtn" onClick={() => {props.setPage("criar")}}>ADICIONAR CARTÃO</button>
+                    <button className="addBtn" onClick={() => {props.setPage("criar")}}><MdOutlineAdd/> ADICIONAR CARTÃO</button>
                 </div>
             </div>
             <p className="pageDescription">
@@ -41,8 +50,8 @@ export default function ListCards(props){
 
 
                                         <div>
-                                            ✏´
-                                            ❌
+                                            <MdEdit className="editIcon"/>
+                                            <MdOutlineClear className="exitIcon" onClick={() => {props.setSelectedCard(card); props.setDeleteConfirm(true);}}/>
                                         </div>
                                     </div>
 

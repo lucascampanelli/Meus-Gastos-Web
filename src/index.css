@@ -50,6 +50,15 @@ main{
   padding: 0;
   font-weight: bold;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.addBtn svg {
+  width: 22px;
+  height: 22px;
+  margin-right: 7px;
 }
 
 .cancelBtn{
