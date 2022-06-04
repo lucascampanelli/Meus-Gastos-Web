@@ -8,9 +8,12 @@ export default function Expenses(props){
                 <section>
                     <div className='screenControl'>
                         <h2>Minhas despesas</h2>
-                        <button className="addBtn">CRIAR DESPESA</button>
+
+                        <div>
+                            <button className="addBtn">CRIAR DESPESA</button>
+                        </div>
                     </div>
-                    <p>
+                    <p className="pageDescription">
                         Visualize e cadastre suas despesas.
                     </p>
                 </section>

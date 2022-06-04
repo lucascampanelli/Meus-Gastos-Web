@@ -1,30 +1,67 @@
-body {
-  margin: 0;
+*{
+  box-sizing: border-box;
+  outline: none;
+  border: none;
   font-family: Roboto;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-main{
-  padding: 10px 40px;
+body {
+  background-color: #232323;
+  color: #ffffff;
+  margin: 0;
 }
 
-h2{
-  font-size: 28px;
+main{
+  padding: 10px 86px;
 }
 
 .screenControl{
   display: flex;
   flex-direction: row;
-  justify-content:space-between;
-  padding-right: 3%;
+  justify-content: space-between;
+  width: 100%;
+  margin: 33px 0 0 0;
+}
+
+.screenControl h2{
+  font-size: 28px;
+  align-self: flex-start;
+  margin: 0;
+}
+
+.screenControl div {
+  width: 18%;
+  align-self: center;
+}
+
+.pageDescription{
+  margin: 12px 0 53px 0;
 }
 
 .addBtn{
-  align-self: center;
-  width: 180px;
+  /* width: 180px; */
+  width: 100%;
   height: 45px;
   background-color: #f5b342;
+  border: none;
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.cancelBtn{
+  align-self: center;
+  /* width: 180px; */
+  width: 100%;
+  height: 45px;
+  background-color: RGBA(255,255,255, 0);
+  border-style: solid !important;
+  border-width: 2px !important;
+  border-color: #989898 !important;
+  color: #989898;
   border: none;
   margin: 0;
   padding: 0;
