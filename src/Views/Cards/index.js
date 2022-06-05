@@ -3,6 +3,7 @@ import './style.css';
 import ListCards from './List/listCard';
 import CreateCards from './Create/createCard';
 import DeleteCards from './Delete/deleteCard';
+import UpdateCards from './Update/updateCard';
 
 export default function Cards(props){
 
@@ -31,7 +32,10 @@ export default function Cards(props){
                             page === "criar" ?
                                 <CreateCards setPage={setPage}/>
                             :
-                                "Você está em um local desconhecido"
+                                page === "editar" ?
+                                    <UpdateCards card={selectedCard} setPage={setPage}/>
+                                :
+                                    "Você está em um local desconhecido"
                     }
 
             </article>

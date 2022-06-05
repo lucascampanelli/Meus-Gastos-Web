@@ -21,8 +21,7 @@ export default function ListCards(props){
     useEffect(() => {
         if(props.jobSuccess)
             getCards();
-
-        console.log(props.jobSuccess);
+            
         props.setJobSuccess(false);
     }, [props.jobSuccess]);
 
@@ -50,7 +49,7 @@ export default function ListCards(props){
 
 
                                         <div>
-                                            <MdEdit className="editIcon"/>
+                                            <MdEdit className="editIcon" onClick={() => {props.setSelectedCard(card); props.setPage("editar");}}/>
                                             <MdOutlineClear className="exitIcon" onClick={() => {props.setSelectedCard(card); props.setDeleteConfirm(true);}}/>
                                         </div>
                                     </div>

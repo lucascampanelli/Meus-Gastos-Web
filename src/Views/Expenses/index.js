@@ -1,22 +1,27 @@
-import React  from 'react';
+import React, { useState }  from 'react';
+import CreateExpense from './Create/createExpense';
+import ListExpense from './List/listExpense';
+import './style.css';
 
 export default function Expenses(props){
+
+    const [page, setPage] = useState("criar");
+    const [deleteConfirm, setDeleteConfirm] = useState(false);
+    const [selected, setSelected] = useState({});
+    const [jobSuccess, setJobSuccess] = useState(false);
 
     return(
         <main>
             <article>
-                <section>
-                    <div className='screenControl'>
-                        <h2>Minhas despesas</h2>
-
-                        <div>
-                            <button className="addBtn">CRIAR DESPESA</button>
-                        </div>
-                    </div>
-                    <p className="pageDescription">
-                        Visualize e cadastre suas despesas.
-                    </p>
-                </section>
+                {
+                    page === "listar" ?
+                        <ListExpense setPage={setPage} jobSuccess={jobSuccess} setJobSuccess={setJobSuccess}/>
+                    :
+                        page === "criar" ?
+                            <CreateExpense setPage={setPage}/>
+                        :
+                            "Você está em um local desconhecido"
+                }
             </article>
         </main>
     );
