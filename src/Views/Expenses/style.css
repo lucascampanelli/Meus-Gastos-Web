@@ -1,0 +1,132 @@
+.expenseList{
+    list-style: none;
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 33px 10px;
+    margin: 53px 0 0 0;
+    padding: 0;
+}
+
+
+.expenseList li{
+    width: 100%;
+}
+
+.expenseList li .expenseCard{
+    background-color: #333333;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: space-between;
+    margin-bottom: 15px;
+    padding: 12px 12px 0 12px;
+}
+
+.expenseIcon svg{
+    background-color: #535353;
+    border-radius: 100%;
+    width: 90%;
+    height: 90%;
+    justify-self: center;
+    padding: 20%;
+}
+
+.expenseCard p{
+    font-size: 12px;
+}
+
+.expenseColumn {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    margin-right: 3%;
+    justify-content:center;
+}
+
+.expenseList li .expenseCard .rightColumn {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.infoRow{
+    width: 100%;
+    display: flex;
+    flex-direction: row !important;
+    height: 100%;
+}
+
+.expenseName{
+    width: 80%;
+}
+
+.expenseList h3{
+    color: #4384f5;
+    font-weight: bolder;
+    display: inline;
+}
+
+.expenseActions{
+    width: 20%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.expenseActions .editIcon {
+    height: 14px;
+    width: 17px;
+    cursor: pointer;
+}
+
+.expenseActions .exitIcon {
+    height: 18px;
+    width: 18px;
+    margin-left: 20%;
+    cursor: pointer;
+    color: #f55943;
+}
+
+.valueRow{
+    width: 100%;
+    display: flex;
+    flex-direction: row !important;
+    padding: 0 !important;
+}
+
+.installValue{
+    color: #f5b343;
+    font-size: 12px !important;
+}
+
+.cardInfo{
+    width: 70%;
+}
+
+.expenseValue{
+    width: 30%;
+}
+
+.expenseList .expenseCardName{
+    display: inline;
+    font-size: 12px;
+}
+
+.expenseList .expenseCardName svg{
+    margin-right: 1px;
+    width: 14px;
+    height: 14px;
+    padding-top: 2px;
+    color: #def543;
+}
+
+.dateRow{
+    width: 100%;
+}
+
+.expenseList .startDate{
+    color: #939393;
+    font-weight: bolder;
+    font-size: 11px !important;
+}
