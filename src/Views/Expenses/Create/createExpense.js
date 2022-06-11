@@ -55,7 +55,7 @@ export default function CreateExpense(props){
             </p>
 
             <form onSubmit={createExpense}>
-                <input placeholder='NOME' type="text" maxLength={15} onChange={e => setName(e.target.value)}/>
+                <input placeholder='NOME' type="text" maxLength={30} onChange={e => setName(e.target.value)}/>
                 <input placeholder='DATA DO INÍCIO' type='text' max="7" min="7" onChange={e => setStartDate(e.target.value)}/>
                 <input placeholder='VALOR DA PARCELA' type="text" onChange={e => setInstallmenteValue(e.target.value)}/>
                 <input placeholder='QUANTIDADE DE PARCELAS' type="number" min="1" onChange={e => setInstallmenteAmount(e.target.value)}/>

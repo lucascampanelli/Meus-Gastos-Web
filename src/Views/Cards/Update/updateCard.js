@@ -51,7 +51,7 @@ export default function UpdateCards(props){
 
             <form onSubmit={updateCard}>
                 <label>NOME</label>
-                <input placeholder='NOME' type="text" value={name} maxLength={15} onChange={e => setName(e.target.value)}/>
+                <input placeholder='NOME' type="text" value={name} maxLength={30} onChange={e => setName(e.target.value)}/>
                 <label>LIMITE</label>
                 <input placeholder='LIMITE' type='number' value={limit} onChange={e => setLimit(e.target.value)}/>
                 <label>DIA DO VENCIMENTO</label>

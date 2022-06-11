@@ -9,16 +9,16 @@
 }
 
 .cardsList li{
-    /* background-color: #333333; */
-    /* background: linear-gradient(30deg, #ff0000 -10%, #0000ff 120%); */
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    background: linear-gradient(90deg, #243b7a -30%, #72004c 180%);
     width: 100%;
     max-width: 320px;
     height: 150px;
     border-radius: 7px;
     padding: 0px 22px;
+}
+
+.cardsList li:hover {
+    background: linear-gradient(70deg, #324680 -30%, #8f0018 180%);
 }
 
 .cardsList li h3{
