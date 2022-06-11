@@ -37,7 +37,7 @@ export default function CreateCards(props){
             </p>
 
             <form onSubmit={createCard}>
-                <input placeholder='NOME' type="text" maxLength={15} onChange={e => setName(e.target.value)}/>
+                <input placeholder='NOME' type="text" maxLength={30} onChange={e => setName(e.target.value)}/>
                 <input placeholder='LIMITE' type='number' onChange={e => setLimit(e.target.value)}/>
                 <input placeholder='DIA DO VENCIMENTO' type="number" max="31" min="1" onChange={e => setExpiration(e.target.value)}/>
                 
