@@ -1,4 +1,5 @@
 import React, { useState }  from 'react';
+import { PlainCreditCard } from '../../../Utils/Illustrations';
 import api from './../../../Services/Api'
 
 export default function CreateCards(props){
@@ -28,7 +29,7 @@ export default function CreateCards(props){
     }
 
     return(
-        <section>
+        <section id="cardCreate">
             <div className='screenControl'>
                 <h2>Criar cartão</h2>
             </div>
@@ -36,23 +37,29 @@ export default function CreateCards(props){
                 Crie um novo cartão para gerenciar suas finanças.
             </p>
 
-            <form onSubmit={createCard}>
-                <input placeholder='NOME' type="text" maxLength={30} onChange={e => setName(e.target.value)}/>
-                <input placeholder='LIMITE' type='number' onChange={e => setLimit(e.target.value)}/>
-                <input placeholder='DIA DO VENCIMENTO' type="number" max="31" min="1" onChange={e => setExpiration(e.target.value)}/>
-                
-                {
-                    error ?
-                        <p className="errorMsg">{error}</p>
-                    :
-                        ""
-                }
+            <div className="container">
+                <form onSubmit={createCard}>
+                    <input placeholder='NOME' type="text" maxLength={30} onChange={e => setName(e.target.value)}/>
+                    <input placeholder='LIMITE' type='number' onChange={e => setLimit(e.target.value)}/>
+                    <input placeholder='DIA DO VENCIMENTO' type="number" max="31" min="1" onChange={e => setExpiration(e.target.value)}/>
+                    
+                    {
+                        error ?
+                            <p className="errorMsg">{error}</p>
+                        :
+                            ""
+                    }
 
-                <div className='formControl'>
-                    <button type="reset" className="cancelBtn" onClick={() => {props.setPage("listar")}}>CANCELAR</button>
-                    <button className="addBtn">ADICIONAR CARTÃO</button>
+                    <div className='formControl'>
+                        <button type="reset" className="cancelBtn" onClick={() => {props.setPage("listar")}}>CANCELAR</button>
+                        <button className="addBtn">ADICIONAR CARTÃO</button>
+                    </div>
+                </form>
+
+                <div>
+                    <PlainCreditCard/>
                 </div>
-            </form>
+            </div>
         </section>
     );
 }

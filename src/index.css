@@ -77,3 +77,8 @@ main{
   font-weight: bold;
   cursor: pointer;
 }
+
+.container{
+  display: flex;
+  flex-direction: row;
+}

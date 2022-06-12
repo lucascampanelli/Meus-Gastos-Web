@@ -1,2 +1,7 @@
-
-
+#home svg{
+    width: 450px;
+    height: 400px;
+    margin: 2% 0 0 60%;
+    background-color: #c9953b;
+    border-radius: 800px;
+}

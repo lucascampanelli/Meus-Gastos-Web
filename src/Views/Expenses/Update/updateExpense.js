@@ -1,4 +1,5 @@
 import React, { useState, useEffect }  from 'react';
+import { MobileBillings } from '../../../Utils/Illustrations';
 import api from './../../../Services/Api'
 
 export default function UpdateExpense(props){
@@ -100,7 +101,7 @@ export default function UpdateExpense(props){
     }, []);
 
     return(
-        <section>
+        <section id="expenseUpdate">
             <div className='screenControl'>
                 <h2>Atualizar despesa</h2>
             </div>
@@ -108,43 +109,49 @@ export default function UpdateExpense(props){
                 Edite as informações da sua despesa para o melhor controle de suas finanças.
             </p>
 
-            <form onSubmit={updateCard}>
-                <label>NOME</label>
-                <input placeholder='NOME' type="text" value={name} maxLength={30} onChange={e => setName(e.target.value)}/>
-                <label>DATA DO INÍCIO</label>
-                <input placeholder='DATA DO INÍCIO' type='text' value={startDate} max="7" min="7" onChange={e => setStartDate(e.target.value)}/>
-                <label>VALOR DA PARCELA</label>
-                <input placeholder='VALOR DA PARCELA' type="text" value={installmentValue} onChange={e => setInstallmenteValue(e.target.value)}/>
-                <label>QUANTIDADE DE PARCELAS</label>
-                <input placeholder='QUANTIDADE DE PARCELAS' type="number" value={installmentAmount} min="1" onChange={e => setInstallmenteAmount(e.target.value)}/>
-                {
-                    cards ?
-                        <>
-                            <label>CARTÃO DO PARCELAMENTO</label>
-                            <select placeholder='VALOR DA PARCELA' type="number" onChange={e => setCardId(e.target.value)}>
-                                {
-                                    cards.map((card) => (
-                                        <option value={card.id} key={card.id}>{card.name}</option>
-                                    ))
-                                }
-                            </select>
-                        </>
-                    :
-                        ""
-                }
-                
-                {
-                    error ?
-                        <p className="errorMsg">{error}</p>
-                    :
-                        ""
-                }
+            <div className="container">
+                <form onSubmit={updateCard}>
+                    <label>NOME</label>
+                    <input placeholder='NOME' type="text" value={name} maxLength={30} onChange={e => setName(e.target.value)}/>
+                    <label>DATA DO INÍCIO</label>
+                    <input placeholder='DATA DO INÍCIO' type='text' value={startDate} max="7" min="7" onChange={e => setStartDate(e.target.value)}/>
+                    <label>VALOR DA PARCELA</label>
+                    <input placeholder='VALOR DA PARCELA' type="text" value={installmentValue} onChange={e => setInstallmenteValue(e.target.value)}/>
+                    <label>QUANTIDADE DE PARCELAS</label>
+                    <input placeholder='QUANTIDADE DE PARCELAS' type="number" value={installmentAmount} min="1" onChange={e => setInstallmenteAmount(e.target.value)}/>
+                    {
+                        cards ?
+                            <>
+                                <label>CARTÃO DO PARCELAMENTO</label>
+                                <select placeholder='VALOR DA PARCELA' type="number" onChange={e => setCardId(e.target.value)}>
+                                    {
+                                        cards.map((card) => (
+                                            <option value={card.id} key={card.id}>{card.name}</option>
+                                        ))
+                                    }
+                                </select>
+                            </>
+                        :
+                            ""
+                    }
+                    
+                    {
+                        error ?
+                            <p className="errorMsg">{error}</p>
+                        :
+                            ""
+                    }
 
-                <div className='formControl'>
-                    <button type="reset" className="cancelBtn" onClick={() => {props.setPage("listar")}}>CANCELAR</button>
-                    <button className="addBtn">ATUALIZAR CARTÃO</button>
+                    <div className='formControl'>
+                        <button type="reset" className="cancelBtn" onClick={() => {props.setPage("listar")}}>CANCELAR</button>
+                        <button className="addBtn">ATUALIZAR CARTÃO</button>
+                    </div>
+                </form>
+
+                <div>
+                    <MobileBillings/>
                 </div>
-            </form>
+            </div>
         </section>
     );
 }

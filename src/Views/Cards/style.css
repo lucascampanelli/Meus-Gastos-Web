@@ -178,3 +178,15 @@ form .formControl {
 .alertControl div{
     width: 38%;
 }
+
+#cardCreate .container svg {
+    width: 490px;
+    height: 200px;
+    margin-left: 40%;
+}
+
+#cardUpdate .container svg {
+    width: 460px;
+    height: 360px;
+    margin-left: 60%;
+}

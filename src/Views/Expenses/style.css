@@ -130,3 +130,15 @@
     font-weight: bolder;
     font-size: 11px !important;
 }
+
+.container svg {
+    width: 500px;
+    height: 500px;
+    margin-left: 50%;
+}
+
+/* #expenseCreate .container svg {
+    width: 500px;
+    height: 500px;
+    margin-left: 50%;
+} */

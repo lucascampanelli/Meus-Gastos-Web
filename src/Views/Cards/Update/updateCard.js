@@ -1,4 +1,5 @@
 import React, { useState }  from 'react';
+import { PaymentCard } from '../../../Utils/Illustrations';
 import api from './../../../Services/Api'
 
 export default function UpdateCards(props){
@@ -41,7 +42,7 @@ export default function UpdateCards(props){
     }
 
     return(
-        <section>
+        <section id="cardUpdate">
             <div className='screenControl'>
                 <h2>Atualizar cartão</h2>
             </div>
@@ -49,26 +50,32 @@ export default function UpdateCards(props){
                 Edite as informações do seu cartão para o melhor controle de suas finanças.
             </p>
 
-            <form onSubmit={updateCard}>
-                <label>NOME</label>
-                <input placeholder='NOME' type="text" value={name} maxLength={30} onChange={e => setName(e.target.value)}/>
-                <label>LIMITE</label>
-                <input placeholder='LIMITE' type='number' value={limit} onChange={e => setLimit(e.target.value)}/>
-                <label>DIA DO VENCIMENTO</label>
-                <input placeholder='DIA DO VENCIMENTO' value={expiration} type="number" max="31" min="1" onChange={e => setExpiration(e.target.value)}/>
-                
-                {
-                    error ?
-                        <p className="errorMsg">{error}</p>
-                    :
-                        ""
-                }
+            <div className="container">
+                <form onSubmit={updateCard}>
+                    <label>NOME</label>
+                    <input placeholder='NOME' type="text" value={name} maxLength={30} onChange={e => setName(e.target.value)}/>
+                    <label>LIMITE</label>
+                    <input placeholder='LIMITE' type='number' value={limit} onChange={e => setLimit(e.target.value)}/>
+                    <label>DIA DO VENCIMENTO</label>
+                    <input placeholder='DIA DO VENCIMENTO' value={expiration} type="number" max="31" min="1" onChange={e => setExpiration(e.target.value)}/>
+                    
+                    {
+                        error ?
+                            <p className="errorMsg">{error}</p>
+                        :
+                            ""
+                    }
 
-                <div className='formControl'>
-                    <button type="reset" className="cancelBtn" onClick={() => {props.setPage("listar")}}>CANCELAR</button>
-                    <button className="addBtn">ATUALIZAR CARTÃO</button>
+                    <div className='formControl'>
+                        <button type="reset" className="cancelBtn" onClick={() => {props.setPage("listar")}}>CANCELAR</button>
+                        <button className="addBtn">ATUALIZAR CARTÃO</button>
+                    </div>
+                </form>
+
+                <div>
+                    <PaymentCard/>
                 </div>
-            </form>
+            </div>
         </section>
     );
 }

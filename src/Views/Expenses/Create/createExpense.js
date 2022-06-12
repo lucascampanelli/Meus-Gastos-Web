@@ -1,4 +1,5 @@
 import React, { useEffect, useState }  from 'react';
+import { PaymentChecklist } from '../../../Utils/Illustrations';
 import api from './../../../Services/Api'
 
 export default function CreateExpense(props){
@@ -46,7 +47,7 @@ export default function CreateExpense(props){
     }, []);
 
     return(
-        <section>
+        <section id="expenseCreate">
             <div className='screenControl'>
                 <h2>Criar despesa</h2>
             </div>
@@ -54,39 +55,45 @@ export default function CreateExpense(props){
                 Crie uma nova despesa para ter uma melhor visão sobre seus gastos.
             </p>
 
-            <form onSubmit={createExpense}>
-                <input placeholder='NOME' type="text" maxLength={30} onChange={e => setName(e.target.value)}/>
-                <input placeholder='DATA DO INÍCIO' type='text' max="7" min="7" onChange={e => setStartDate(e.target.value)}/>
-                <input placeholder='VALOR DA PARCELA' type="text" onChange={e => setInstallmenteValue(e.target.value)}/>
-                <input placeholder='QUANTIDADE DE PARCELAS' type="number" min="1" onChange={e => setInstallmenteAmount(e.target.value)}/>
-                {
-                    cards ?
-                        <>
-                            <label>CARTÃO DO PARCELAMENTO</label>
-                            <select placeholder='VALOR DA PARCELA' type="number" onChange={e => setCardId(e.target.value)}>
-                                {
-                                    cards.map((card) => (
-                                        <option value={card.id} key={card.id}>{card.name}</option>
-                                    ))
-                                }
-                            </select>
-                        </>
-                    :
-                        ""
-                }
-                
-                {
-                    error ?
-                        <p className="errorMsg">{error}</p>
-                    :
-                        ""
-                }
+            <div className="container">
+                <form onSubmit={createExpense}>
+                    <input placeholder='NOME' type="text" maxLength={30} onChange={e => setName(e.target.value)}/>
+                    <input placeholder='DATA DO INÍCIO' type='text' max="7" min="7" onChange={e => setStartDate(e.target.value)}/>
+                    <input placeholder='VALOR DA PARCELA' type="text" onChange={e => setInstallmenteValue(e.target.value)}/>
+                    <input placeholder='QUANTIDADE DE PARCELAS' type="number" min="1" onChange={e => setInstallmenteAmount(e.target.value)}/>
+                    {
+                        cards ?
+                            <>
+                                <label>CARTÃO DO PARCELAMENTO</label>
+                                <select placeholder='VALOR DA PARCELA' type="number" onChange={e => setCardId(e.target.value)}>
+                                    {
+                                        cards.map((card) => (
+                                            <option value={card.id} key={card.id}>{card.name}</option>
+                                        ))
+                                    }
+                                </select>
+                            </>
+                        :
+                            ""
+                    }
+                    
+                    {
+                        error ?
+                            <p className="errorMsg">{error}</p>
+                        :
+                            ""
+                    }
 
-                <div className='formControl'>
-                    <button type="reset" className="cancelBtn" onClick={() => {props.setPage("listar")}}>CANCELAR</button>
-                    <button className="addBtn">ADICIONAR CARTÃO</button>
+                    <div className='formControl'>
+                        <button type="reset" className="cancelBtn" onClick={() => {props.setPage("listar")}}>CANCELAR</button>
+                        <button className="addBtn">ADICIONAR CARTÃO</button>
+                    </div>
+                </form>
+
+                <div>
+                    <PaymentChecklist/>
                 </div>
-            </form>
+            </div>
         </section>
     );
 }
