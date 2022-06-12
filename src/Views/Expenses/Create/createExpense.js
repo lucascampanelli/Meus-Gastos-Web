@@ -22,7 +22,7 @@ export default function CreateExpense(props){
             "startDate": startDate.toString(),
             "installmentValue": parseFloat(installmentValue),
             "installmentAmount": parseInt(installmentAmount),
-            "cardId" : parseInt(cardId)
+            "cardId" : cardId.toString()
         })
         .then(() => {
             props.setPage("listar");

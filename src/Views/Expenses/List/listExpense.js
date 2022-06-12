@@ -72,7 +72,10 @@ export default function ListExpense(props){
                                                 <div className="expenseValue">
                                                     <p className="installValue">R$ {
                                                                                         (expense.installmentValue).toString().includes(".") ?
-                                                                                            (expense.installmentValue).toString().replace(".", ",")
+                                                                                            (expense.installmentValue).toString().split(".")[1].length === 1 ?
+                                                                                                (expense.installmentValue).toString().replace(".", ",") + "0"
+                                                                                            :
+                                                                                                (expense.installmentValue).toString().replace(".", ",")
                                                                                         :
                                                                                             (expense.installmentValue).toString() + ",00"
                                                                                 } ({expense.installmentAmount}x)</p>

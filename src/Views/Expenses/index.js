@@ -3,6 +3,7 @@ import CreateExpense from './Create/createExpense';
 import DeleteExpense from './Delete/deleteExpense';
 import ListExpense from './List/listExpense';
 import './style.css';
+import UpdateExpense from './Update/updateExpense';
 
 export default function Expenses(props){
 
@@ -30,7 +31,10 @@ export default function Expenses(props){
                         page === "criar" ?
                             <CreateExpense setPage={setPage}/>
                         :
-                            "Você está em um local desconhecido"
+                            page === "editar" ?
+                                <UpdateExpense setPage={setPage} expense={selected}/>
+                            :
+                                "Você está em um local desconhecido"
                 }
             </article>
         </main>
